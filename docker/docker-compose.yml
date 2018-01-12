@@ -1,0 +1,9 @@
+itdb:
+  image: $IMAGE_NAME:$CI_BUILD_TAG
+
+  labels:
+    aliyun.scale: '$INSTANCES'
+    aliyun.routing.port_80: 'http://$DOMAIN'
+  restart: always
+  environment:
+    - reschedule:on-node-failure
